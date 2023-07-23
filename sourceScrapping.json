@@ -1,0 +1,86 @@
+[
+  {
+    "link": "https://idvolunteering.id/category/lowongan/",
+    "tag": "Volunteer",
+    "source": "idvolunteering",
+    "params": {
+      "extract_rules": {
+        "all_links": {
+          "selector": "article",
+          "type": "list",
+          "output": {
+            "anchor": {
+              "selector": "a",
+              "output": "@title"
+            },
+            "title": {
+              "selector": "a",
+              "output": "@title"
+            },
+            "time": "span.entry-date",
+            "img": {
+              "selector": "div.box-image.col-lg-6.col-md-6 > img",
+              "output": "@src"
+            },
+            "href": {
+              "selector": "a",
+              "output": "@href"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "link": "https://www.loket.com/discover?per_page=16&sorts=daz&f=15&has_paid_ticket=0&p=6",
+    "tag": "Event",
+    "source": "Loket",
+    "params": {
+      "extract_rules": {
+        "all_links": {
+          "selector": "div.card-event-new-template",
+          "type": "list",
+          "output": {
+            "anchor": "div.title h2",
+            "title": "div.title h2",
+            "time": "div.date",
+            "img": {
+              "selector": "a img",
+              "output": "@src"
+            },
+            "href": {
+              "selector": "a",
+              "output": "@href"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "link": "https://www.meetup.com/find/?source=EVENTS&location=id--Jakarta&categoryId=546",
+    "tag": "Event",
+    "source": "MeetUp",
+    "params": {
+      "extract_rules": {
+        "all_links": {
+          "selector": "a",
+          "type": "list",
+          "output": {
+            "anchor": "a",
+            "title": "h2",
+            "time": "h3 time",
+            "img": {
+              "selector": "img",
+              "output": "@src"
+            },
+            "href": {
+              "selector": "a",
+              "output": "@href"
+            }
+          }
+        }
+      }
+    }
+  }
+]
